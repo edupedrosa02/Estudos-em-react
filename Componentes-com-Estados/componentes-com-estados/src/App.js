@@ -1,23 +1,32 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 
-function handleClick(){
-  console.log('Clicou!');
-};
-function handleChange(){
-  console.log('mudou');
-};
-function handleChange2(){
-  console.log('mudou2');
-};
 
-function App() {
-  return (
- <section> <div><button onClick={handleClick}>Clique me!</button>
-  <button onClick={handleChange}>Clique me!</button>
-  <button onPointerMove={handleChange2}>Clique me!</button>
-</div></section>
-  );
+ class App extends React.Component {
+constructor(){
+  super()
+  this.handleClick=this.handleClick.bind(this);
+  this.handleChange=this.handleClick.bind(this);
+  this.handleChange2=this.handleClick.bind(this);
+}
+  handleClick(){
+    console.log('Clicou!');
+  };
+  handleChange(){
+    console.log('mudou');
+  };
+  handleChange2(){
+    console.log('mudou2');
+  };
+  render() {
+    return (
+      <div>
+        <button type="button" onClick={ this.handleClick }>Botão 1</button>
+        <button type="button" onClick={ this.handleChange }>Botão 2</button>
+        <button type="button" onPointerMove={ this.handleChange2 }>Botão 3</button>
+      </div>
+    )
+  }
 }
 
 export default App;
