@@ -1,24 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
 
+function handleClick(){
+  console.log('Clicou!');
+};
+function handleChange(){
+  console.log('mudou');
+};
+function handleChange2(){
+  console.log('mudou2');
+};
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <section> <div><button onClick={handleClick}>Clique me!</button>
+  <button onClick={handleChange}>Clique me!</button>
+  <button onPointerMove={handleChange2}>Clique me!</button>
+</div></section>
   );
 }
 
